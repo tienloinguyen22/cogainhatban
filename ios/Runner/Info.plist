@@ -41,5 +41,24 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>com.googleusercontent.apps.726990383242-calgo2uk97opjua6h8oc7o99bhtog5ku</string>
+			</array>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>fb360673901446414</string>
+			</array>
+		</dict>
+	</array>
+	<key>FacebookAppID</key>
+	<string>360673901446414</string>
+	<key>FacebookDisplayName</key>
+	<string>techkids-hotgirl</string>
 </dict>
 </plist>
