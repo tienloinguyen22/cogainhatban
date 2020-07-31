@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "726990383242",
+    "firebase_url": "https://cogainhatban-d5a40.firebaseio.com",
+    "project_id": "cogainhatban-d5a40",
+    "storage_bucket": "cogainhatban-d5a40.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:726990383242:android:ad10846b41af886305e573",
+        "android_client_info": {
+          "package_name": "com.example.cogainhatban"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "726990383242-ickj6r16qm73kjcvavn386m8b9c4613i.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBkKjGTV5B0g2jMWO37bnt1WjMG4Ky4xbA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "726990383242-ickj6r16qm73kjcvavn386m8b9c4613i.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "726990383242-calgo2uk97opjua6h8oc7o99bhtog5ku.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.cogainhatban"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
