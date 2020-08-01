@@ -1,3 +1,4 @@
+import 'package:cogainhatban/screens/HomeScreen/HomeScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_facebook_login/flutter_facebook_login.dart';
@@ -40,7 +41,11 @@ class FacebookButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return RaisedButton(
       onPressed: () async {
-        this._handleFacebookSignin(context);
+        // this._handleFacebookSignin(context);
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => HomeScreen()),
+        );
       },
       color: Color(0xff3b5998),
       shape: RoundedRectangleBorder(

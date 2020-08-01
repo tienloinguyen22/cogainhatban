@@ -1,7 +1,9 @@
+import 'package:cogainhatban/states/AuthenticatedUserState.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:google_sign_in/google_sign_in.dart';
+import 'package:provider/provider.dart';
 
 class GoogleButton extends StatelessWidget {
   final GoogleSignIn _googleSignIn = GoogleSignIn();
@@ -9,7 +11,9 @@ class GoogleButton extends StatelessWidget {
 
   void _handleGoogleSignIn(BuildContext context) async {
     try {
-      final GoogleSignInAccount googleSignInAccount = await this._googleSignIn.signIn().catchError(() {});
+      final GoogleSignInAccount googleSignInAccount = await this._googleSignIn.signIn().catchError((error) {
+        print(error);
+      });
       final GoogleSignInAuthentication googleAuth = await googleSignInAccount.authentication;
 
       final AuthCredential credential = GoogleAuthProvider.getCredential(
@@ -18,8 +22,16 @@ class GoogleButton extends StatelessWidget {
       );
 
       final AuthResult authResult = await this._auth.signInWithCredential(credential);
-      print('Google login: ');
-      print(authResult.user);
+      Provider.of<AuthenticatedUserState>(context, listen: false).setAuthenticatedUser(
+        AuthenticatedUser(
+          id: authResult.user.uid,
+          displayName: authResult.user.displayName,
+          email: authResult.user.email,
+          phoneNumber: authResult.user.phoneNumber,
+          isEmailVerified: authResult.user.isEmailVerified,
+          photoUrl: authResult.user.photoUrl,
+        ),
+      );
     } catch (error) {
       final snackBar = SnackBar(content: Text(error.message));
       Scaffold.of(context).showSnackBar(snackBar);
