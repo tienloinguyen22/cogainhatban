@@ -50,6 +50,8 @@
 			<array>
 				<string>com.googleusercontent.apps.726990383242-calgo2uk97opjua6h8oc7o99bhtog5ku</string>
 			</array>
+		</dict>
+		<dict>
 			<key>CFBundleURLSchemes</key>
 			<array>
 				<string>fb360673901446414</string>
