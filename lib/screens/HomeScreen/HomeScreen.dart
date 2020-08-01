@@ -18,7 +18,7 @@ class _HomeScreenState extends State<HomeScreen> {
           appBar: AppBar(
             title: Text('Home'),
           ),
-          body: Text('Total price: ${state.authenticatedUser.email}'),
+          body: Text('Total price: ${state.authenticatedUser?.email}'),
         );
       },
     );

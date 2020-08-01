@@ -7,7 +7,10 @@ void main() {
   runApp(
     MultiProvider(
       providers: [
-        ChangeNotifierProvider(create: (context) => AuthenticatedUserState()),
+        ChangeNotifierProvider(
+          create: (context) => AuthenticatedUserState(),
+          lazy: false,
+        ),
       ],
       child: MyApp(),
     ),
