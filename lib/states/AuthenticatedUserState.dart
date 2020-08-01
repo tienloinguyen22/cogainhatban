@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'dart:convert';
@@ -26,12 +28,15 @@ class AuthenticatedUser {
 
 class AuthenticatedUserState extends ChangeNotifier {
   AuthenticatedUser _authenticatedUser;
+  bool _initializing = true;
 
   AuthenticatedUserState() {
     this.setup();
   }
 
   bool get isAuthenticated => this._authenticatedUser.id.isEmpty ? false : true;
+
+  bool get isInitializing => this._initializing;
 
   AuthenticatedUser get authenticatedUser => this._authenticatedUser;
 
@@ -53,7 +58,8 @@ class AuthenticatedUserState extends ChangeNotifier {
       this._authenticatedUser = AuthenticatedUser();
     }
 
-    print('Done');
+    this._initializing = false;
+    notifyListeners();
   }
 
   void setAuthenticatedUser(AuthenticatedUser user) async {
