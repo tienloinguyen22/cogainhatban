@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
-import '../../states/AuthenticatedUserState.dart';
 
 class HomeScreen extends StatefulWidget {
   HomeScreen({Key key}) : super(key: key);
@@ -12,15 +10,36 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
-    return Consumer<AuthenticatedUserState>(
-      builder: (context, state, child) {
-        return Scaffold(
-          appBar: AppBar(
-            title: Text('Home'),
-          ),
-          body: Text('Total price: ${state.authenticatedUser?.email}'),
-        );
-      },
+    return DefaultTabController(
+      length: 2,
+      child: Scaffold(
+        body: TabBarView(
+          children: <Widget>[
+            Container(
+              color: Colors.yellow,
+            ),
+            Container(
+              color: Colors.orange,
+            ),
+          ],
+        ),
+        bottomNavigationBar: TabBar(
+          tabs: [
+            Tab(
+              icon: new Icon(Icons.chat_bubble),
+              child: Text('Chats'),
+            ),
+            Tab(
+              icon: new Icon(Icons.settings),
+              child: Text('Settings'),
+            ),
+          ],
+          labelColor: Color(0xff2CB9B0),
+          unselectedLabelColor: Color(0xff949494),
+          indicatorPadding: EdgeInsets.all(5.0),
+          indicatorColor: Colors.transparent,
+        ),
+      ),
     );
   }
 }
